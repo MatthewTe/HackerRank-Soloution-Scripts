@@ -29,8 +29,20 @@ Output is taken care of by the template. Your function must return a boolean val
 def is_leap(year):
     leap = False
 
-    # Write your logic here
-    
+    # if year can be evenly divided by four:
+    if year % 4 == 0:
+        leap = True
+        # if year can be evenly divided by 100:
+        if year % 100 == 0:
+            leap = False
+            # if year can be evenly divided by 400:
+            if year % 400 == 0:
+                leap = True
+
+    # If leap year cannot be evenly divided by 4:
+    else:
+        leap = False
+        
     return leap
 
 year = int(input())
